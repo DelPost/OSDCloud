@@ -33,6 +33,9 @@ Start-Process PowerShell -ArgumentList "-NoL -C Start-OOBEDeploy" -Wait
 Write-Host -ForegroundColor DarkGray "Executing Cleanup Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/CleanUp.ps1" -Wait
 
+Write-Host -ForegroundColor DarkGray "Executing Bloatware Removal Script"
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/Remove-Appx-AllUsers-CloudSourceList.ps1" -Wait
+
 # Cleanup scheduled Tasks
 Write-Host -ForegroundColor DarkGray "Unregistering Scheduled Tasks"
 Unregister-ScheduledTask -TaskName "Scheduled Task for SendKeys" -Confirm:`$false
