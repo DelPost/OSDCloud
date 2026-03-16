@@ -21,7 +21,7 @@ Start-Process PowerShell -ArgumentList "-NoL -C Install-Module OSD -Force -Verbo
 Write-Host -ForegroundColor DarkGray "Executing Product Key Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/Install-EmbeddedProductKey.ps1" -Wait
 
-Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script"
+Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script from GitHub"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/AP-Prereq.ps1" -Wait
 
 Write-Host -ForegroundColor DarkGray "Installing Get-WindowsAutopilotInfo module"
