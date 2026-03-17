@@ -96,7 +96,7 @@ Begin {
 
     # Black List of Appx Provisioned Packages to Remove for All Users
     $BlackListedAppsURL = $null
-    $BlackListedAppsURL = "https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/blacklist_w11.txt"
+    $BlackListedAppsURL = "https://github.com/DelPost/OSDCloud/blob/main/blacklist_w11.txt"
     Write-LogEntry -Value "BlackListedAppsURL:$($BlackListedAppsURL)"
 
     #Attempt to obtain list of BlackListedApps
