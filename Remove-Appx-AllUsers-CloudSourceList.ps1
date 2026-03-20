@@ -1,29 +1,3 @@
-<#
-.SYNOPSIS
-    Remove built-in apps (modern apps) from Windows 11 for All Users.
-
-.DESCRIPTION
-    This script will remove all built-in apps that are specified in the 'blacklistedapps' variable.
-    The Black list (txt file) is hosted in Azure Blob storage or GitHub so it can be dynamically updated.
-    Built-in apps listed in the txt file that are prefixed with a # will be considered eligible for removal.
-
-    ##WARNING## 
-    Use with caution, restoring deleted provisioning packages is not a simple process.
-
-    ##TIP##
-    If removing "MicrosoftTeams", also consider disabling the "Chat" icon on the taskbar, using INtune settingd catalog, as clicking this will re-install the appxpackage for the user.
-
-.NOTES
-
-    Idea based on an original script for Windows 10 app removal / Credit to: Nickolaj Andersen @ MSEndpointMgr
-    Modifications to original script to Black list Appx instead of Whitelist
-
-    FileName:    Remove-Appx-AllUsers-CloudSourceList.ps1
-    Author:      Ben Whitmore
-    Contact:     @byteben
-    Date:        27th June 2022
-
-#>
 
 Begin {
 
@@ -96,7 +70,7 @@ Begin {
 
     # Black List of Appx Provisioned Packages to Remove for All Users
     $BlackListedAppsURL = $null
-    $BlackListedAppsURL = "https://github.com/DelPost/OSDCloud/blob/main/blacklist_w11.txt"
+    $BlackListedAppsURL = "https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/blacklist_w11.txt"
     Write-LogEntry -Value "BlackListedAppsURL:$($BlackListedAppsURL)"
 
     #Attempt to obtain list of BlackListedApps
