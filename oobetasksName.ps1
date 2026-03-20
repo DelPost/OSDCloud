@@ -24,6 +24,9 @@ Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.g
 Write-Host -ForegroundColor DarkGray "Executing Autopilot Check Script from GitHub"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/AP-Prereq.ps1" -Wait
 
+Write-Host -ForegroundColor DarkGray "Executing Bloatware Removal Script"
+Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/Remove-Appx-AllUsers-CloudSourceList.ps1" -Wait
+
 Write-Host -ForegroundColor DarkGray "Installing Get-WindowsAutopilotInfo module"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/AddAutopilotDeviceName.ps1" -Wait
 
@@ -32,11 +35,6 @@ Start-Process PowerShell -ArgumentList "-NoL -C Start-OOBEDeploy" -Wait
 
 Write-Host -ForegroundColor DarkGray "Executing Cleanup Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/CleanUp.ps1" -Wait
-
-Write-Host -ForegroundColor DarkGray "Executing Bloatware Removal Script"
-Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/Remove-Appx-AllUsers-CloudSourceList.ps1" -Wait
-
-$Logs = Read-Host 'Get-Logs'
 
 # Cleanup scheduled Tasks
 Write-Host -ForegroundColor DarkGray "Unregistering Scheduled Tasks"
