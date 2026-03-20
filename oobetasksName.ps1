@@ -36,6 +36,8 @@ Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.g
 Write-Host -ForegroundColor DarkGray "Executing Bloatware Removal Script"
 Start-Process PowerShell -ArgumentList "-NoL -C Invoke-WebPSScript https://raw.githubusercontent.com/DelPost/OSDCloud/refs/heads/main/Remove-Appx-AllUsers-CloudSourceList.ps1" -Wait
 
+$Logs = Read-Host 'Get-Logs'
+
 # Cleanup scheduled Tasks
 Write-Host -ForegroundColor DarkGray "Unregistering Scheduled Tasks"
 Unregister-ScheduledTask -TaskName "Scheduled Task for SendKeys" -Confirm:`$false
