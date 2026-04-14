@@ -20,7 +20,7 @@ Rename-Computer -NewName $name -Force
 
 Install-Module -Name Get-WindowsAutopilotInfo -Force -Verbose
 
-Get-WindowsAutoPilotInfo -Online -TenantId 'd37a9f10-93f8-4619-89c3-e9a2d02d04ea' -AppId '44ebbefc-a8f2-4b60-a798-f508b9e5797f' -AppSecret 'hTi8Q~RsbPvvtHQqRlpLBIJCrqDN4lbinklftb5G' -GroupTag 'BabysamPOS' -Assign
+Get-WindowsAutoPilotInfo -Online -TenantId 'ea6a4d50-f637-4468-a256-dc0ecb7121dd' -AppId 'af491ae1-674d-4c32-b2b2-0a0917035f4c' -AppSecret 'Rrt8Q~jBXSxyCsPjadecYw6DGZ0Rbo7ui38o3aWM' -GroupTag 'BabysamPOS' -Assign
 
 Stop-Transcript
 
